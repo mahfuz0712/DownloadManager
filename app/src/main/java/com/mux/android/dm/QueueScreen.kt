@@ -25,6 +25,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+@Composable
 fun statusColor(s: Status): Color {
     val c = Hud.colors
     return when (s) {

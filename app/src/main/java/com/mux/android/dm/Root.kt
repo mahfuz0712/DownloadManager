@@ -106,7 +106,7 @@ private fun GrantScreen() {
     val ctx = LocalContext.current
     val legacy = rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { Perm.tick++ }
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
-        PermissionPanel("Download Manager needs storage access to save files where you can find them.") {
+        PermissionPanel("Download Manager needs storage access to save files where you can find them.", onGrant = {
             if (Build.VERSION.SDK_INT >= 30) {
                 try {
                     ctx.startActivity(Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, Uri.parse("package:" + ctx.packageName)))
@@ -116,6 +116,6 @@ private fun GrantScreen() {
             } else {
                 legacy.launch(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission.WRITE_EXTERNAL_STORAGE))
             }
-        }
+        })
     }
 }
