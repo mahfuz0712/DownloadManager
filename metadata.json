@@ -1,0 +1,10 @@
+{
+  "name": "Download Manager",
+  "description": "Sci-fi HUD download manager for Android: catch links shared from any browser, multi-thread segmented downloads, pause/resume, queue, speed limit, categorized file library.",
+  "version": "1.0.0",
+  "ageRating": "3+",
+  "type": "app",
+  "containsAds": false,
+  "category": "Tools",
+  "author": "Mohammad Mahfuz Rahman"
+}
